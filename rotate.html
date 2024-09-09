@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Switcher</title>
+</head>
+<body>
+<img id="image" src="images/image1.jpg" alt="Image 1">
+<button id="switch-button">Switch Image</button>
+
+<script>
+    let imageIndex = 1;
+    const maxImages = 3;
+    const imageElement = document.getElementById('image');
+    const switchButton = document.getElementById('switch-button');
+
+    switchButton.addEventListener('click', () => {
+        imageIndex = (imageIndex % maxImages) + 1;
+        imageElement.src = `images/image${imageIndex}.jpg`;
+    });
+</script>
+</body>
+</html>
